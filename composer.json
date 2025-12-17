@@ -1,0 +1,56 @@
+{
+    "name": "iwf-web/php-coding-standard",
+    "description": "Configs & RuleSets for PHP Code",
+    "type": "library",
+    "keywords": [
+        "php-cs-fixer",
+        "style",
+        "coding-standard",
+        "ruleset"
+    ],
+    "homepage": "https://github.com/iwf-web/php-coding-standard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "D3strukt0r",
+            "email": "dev@d3strukt0r.dev",
+            "homepage": "https://github.com/D3strukt0r",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "email": "developer@iwf.ch",
+        "issues": "https://github.com/iwf-web/php-coding-standard/issues",
+        "forum": "https://github.com/iwf-web/php-coding-standard/discussions",
+        "wiki": "https://github.com/iwf-web/php-coding-standard/wiki",
+        "source": "https://github.com/iwf-web/php-coding-standard",
+        "docs": "https://github.com/iwf-web/php-coding-standard/blob/main/README.md"
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "IWF\\CodingStandard\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "archive": {
+        "exclude": [
+            ".devcontainer",
+            ".github",
+            ".editorconfig",
+            ".gitignore",
+            ".gitattributes",
+            "CODEOWNERS",
+            "*.md",
+            "*.dist.php"
+        ]
+    }
+}
