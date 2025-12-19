@@ -10,3 +10,4 @@
 CODEOWNERS export-ignore
 *.md export-ignore
 *.dist.php export-ignore
+*release*.json export-ignore
