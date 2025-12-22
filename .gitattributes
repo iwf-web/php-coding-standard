@@ -4,6 +4,7 @@
 # This is what is relevant for composer installs
 .devcontainer export-ignore
 .github export-ignore
+.vscode export-ignore
 .editorconfig export-ignore
 .gitignore export-ignore
 .gitattributes export-ignore
@@ -11,3 +12,5 @@ CODEOWNERS export-ignore
 *.md export-ignore
 *.dist.php export-ignore
 *release*.json export-ignore
+README.md -export-ignore export-subst
+CHANGELOG.md -export-ignore export-subst

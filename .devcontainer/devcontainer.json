@@ -55,17 +55,8 @@
         "yzhang.markdown-all-in-one"
       ],
       "settings": {
-        "editor.formatOnSave": true,
-        "[php]": {
-          "editor.tabSize": 4,
-          "editor.defaultFormatter": "junstyle.php-cs-fixer"
-        },
         "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
-        "php-cs-fixer.config": "${workspaceFolder}/.php-cs-fixer.dist.php",
-        "php-cs-fixer.onsave": true,
-        "markdown.extension.list.indentationSize": "adaptive",
-        "markdown.extension.italic.indicator": "_",
-        "markdown.extension.orderedList.marker": "one"
+        "php-cs-fixer.config": "${workspaceFolder}/.php-cs-fixer.dist.php"
       }
     }
   }

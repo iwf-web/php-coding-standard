@@ -45,13 +45,16 @@
         "exclude": [
             ".devcontainer",
             ".github",
+            ".vscode",
             ".editorconfig",
             ".gitignore",
             ".gitattributes",
             "CODEOWNERS",
             "*.md",
             "*.dist.php",
-            "*release*.json"
+            "*release*.json",
+            "!README.md",
+            "!CHANGELOG.md"
         ]
     }
 }
