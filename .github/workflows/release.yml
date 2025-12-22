@@ -18,5 +18,5 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           # Bot PAT with access to Workflows
-          # The built-in GITHUB_TOKEN has cannot trigger other workflows
+          # The built-in GITHUB_TOKEN has cannot trigger other workflows
           token: ${{ secrets.GH_PAT }}

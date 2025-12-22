@@ -99,6 +99,8 @@ Key customizations over the base `@PhpCsFixer:risky` rule set:
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated releases and changelog generation.
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags on this repository][gh-tags].
