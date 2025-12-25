@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/iwf-web/php-coding-standard/compare/1.0.1...1.0.2) (2025-12-25)
+
+
+### 🐛 Bug Fixes
+
+* Bot user is unbanned, use it's token again ([a0ac227](https://github.com/iwf-web/php-coding-standard/commit/a0ac227522729b460cbe526a59706ad6ce160681))
+* dependabot wrong target branch ([bffd2d1](https://github.com/iwf-web/php-coding-standard/commit/bffd2d17c7b807b82a7478f55f546ccda3a2dc29))
+* Keep readme in package ([e98c28f](https://github.com/iwf-web/php-coding-standard/commit/e98c28f44a951bcd6baab836f61c63061f179dcb))
+
 ## [1.0.1](https://github.com/iwf-web/php-coding-standard/compare/1.0.0...1.0.1) (2025-12-19)
 
 
