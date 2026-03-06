@@ -5,7 +5,7 @@
  *
  * @package   PHP Coding Standard
  * @author    IWF Web Solutions <web-solutions@iwf.ch>
- * @copyright Copyright (c) 2025-2025 IWF Web Solutions <web-solutions@iwf.ch>
+ * @copyright Copyright (c) 2025-2026 IWF Web Solutions <web-solutions@iwf.ch>
  * @license   https://github.com/iwf-web/php-coding-standard/blob/main/LICENSE.txt MIT License
  * @link      https://github.com/iwf-web/php-coding-standard
  */
