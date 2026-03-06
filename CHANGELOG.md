@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/iwf-web/php-coding-standard/compare/1.0.2...1.0.3) (2026-03-06)
+
+
+### 🐛 Bug Fixes
+
+* **ci:** Security issue ([dcf0747](https://github.com/iwf-web/php-coding-standard/commit/dcf074764eab22c9fac521cf699abe1e16645f3a))
+* PhpUnit mock expectations are not static, so use $this ([c5c0063](https://github.com/iwf-web/php-coding-standard/commit/c5c006347b02e3b9a0daaa1275a52b0f3bc1e1fd))
+
 ## [1.0.2](https://github.com/iwf-web/php-coding-standard/compare/1.0.1...1.0.2) (2025-12-25)
 
 
