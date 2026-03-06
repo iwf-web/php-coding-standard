@@ -37,9 +37,14 @@ final class IWFRiskySet extends AbstractRuleSetDefinition
             '@auto:risky' => true, // Automatically chooses PHP & PHPUnit risky rulesets based on composer.json
             '@PhpCsFixer:risky' => true, // includes @Symfony:risky, @PSR12:risky, and more
 
-            // Fix PhpUnit wrong access
+            // Fix PhpUnit wrong access (mock expecations are not static calls)
             'php_unit_test_case_static_method_calls' => [
                 'call_type' => 'self',
+                'methods' => [
+                    'never' => 'this',
+                    'once' => 'this',
+                    'exactly' => 'this',
+                ],
             ],
 
             // Disable strict types, we use PhpStan for that
