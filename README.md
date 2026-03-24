@@ -11,9 +11,9 @@ Custom PHP-CS-Fixer rule sets for consistent code style across IWF projects.
 
 This package provides two rule sets:
 
-| Rule Set | Description |
-|----------|-------------|
-| `@IWF/standard` | Non-risky coding style rules for consistent formatting |
+| Rule Set              | Description                                                  |
+| --------------------- | ------------------------------------------------------------ |
+| `@IWF/standard`       | Non-risky coding style rules for consistent formatting       |
 | `@IWF/standard:risky` | Risky rules that may change code behavior (use with caution) |
 
 Both rule sets build upon the excellent `@PhpCsFixer` rule set (which includes `@Symfony` and `@PSR12`) with customizations tailored for IWF projects.
@@ -97,7 +97,7 @@ Key customizations over the base `@PhpCsFixer:risky` rule set:
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+Please read [CONTRIBUTING.md][contributing] for details on our code of conduct and the process for submitting pull requests.
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated releases and changelog generation.
 
@@ -107,11 +107,21 @@ We use [SemVer](http://semver.org/) for versioning. For available versions, see 
 
 ## Authors
 
-All authors can be found in the [AUTHORS.md](AUTHORS.md) file.
+### Special thanks for all the people who had helped this project so far
 
-Contributors can be found in the [CONTRIBUTORS.md](CONTRIBUTORS.md) file.
+- **Manuele** - [D3strukt0r](https://github.com/D3strukt0r)
 
 See also the full list of [contributors][gh-contributors] who participated in this project.
+
+### I would like to join this list. How can I help the project?
+
+We're currently looking for contributions for the following:
+
+- [ ] Bug fixes
+- [ ] Translations
+- [ ] etc...
+
+For more information, please refer to our [CONTRIBUTING.md][contributing] guide.
 
 ## License
 
@@ -119,9 +129,10 @@ This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.t
 
 ## Acknowledgments
 
-A list of used libraries and code with their licenses can be found in the [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md) file.
+This project currently uses no third-party libraries or copied code.
 
 [license]: https://github.com/iwf-web/php-coding-standard/blob/main/LICENSE.txt
 [packagist]: https://packagist.org/packages/iwf-web/php-coding-standard
 [gh-tags]: https://github.com/iwf-web/php-coding-standard/tags
 [gh-contributors]: https://github.com/iwf-web/php-coding-standard/contributors
+[contributing]: https://github.com/iwf-web/.github/blob/main/CONTRIBUTING.md
