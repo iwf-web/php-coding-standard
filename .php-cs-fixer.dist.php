@@ -2,11 +2,10 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use IWF\CodingStandard\IWFRiskySet;
-use IWF\CodingStandard\IWFSet;
+use IWFWeb\CodingStandard\IWFWebStandardRiskySet;
+use IWFWeb\CodingStandard\IWFWebStandardSet;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
-use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 $year = date('Y');
 $header = <<<EOF
@@ -23,24 +22,24 @@ $header = <<<EOF
 // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/rules/index.rst
 return (new Config())
     ->registerCustomRuleSets([
-        new IWFSet(),
-        new IWFRiskySet(),
+        new IWFWebStandardSet(),
+        new IWFWebStandardRiskySet(),
     ])
     ->setFinder(Finder::create()
         ->in(__DIR__)
         ->ignoreDotFiles(false)
-        ->ignoreVCSIgnored(true)
-        ->notPath('.php-cs-fixer.dist.php')
+        ->ignoreVCSIgnored(true),
     )
-    ->setParallelConfig(ParallelConfigFactory::detect())
     ->setUnsupportedPhpVersionAllowed(true)
     ->setRiskyAllowed(true)
     ->setRules([
-        '@IWF/standard' => true,
-        '@IWF/standard:risky' => true,
+        '@IWFWeb/standard' => true,
+        '@IWFWeb/standard:risky' => true,
         'header_comment' => [
             'comment_type' => 'PHPDoc',
             'header' => $header,
         ],
     ])
 ;
+
+// @php-cs-fixer-ignore header_comment

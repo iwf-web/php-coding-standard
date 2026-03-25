@@ -1,6 +1,6 @@
-# IWF PHP Coding Standard
+# IWF Web PHP Coding Standard
 
-Custom PHP-CS-Fixer rule sets for consistent code style across IWF projects.
+Custom PHP-CS-Fixer rule sets for consistent code style across IWF Web projects.
 
 [![License](https://img.shields.io/github/license/iwf-web/php-coding-standard)][license]
 [![Version](https://img.shields.io/packagist/v/iwf-web/php-coding-standard?label=latest%20release)][packagist]
@@ -11,12 +11,12 @@ Custom PHP-CS-Fixer rule sets for consistent code style across IWF projects.
 
 This package provides two rule sets:
 
-| Rule Set | Description |
-|----------|-------------|
-| `@IWF/standard` | Non-risky coding style rules for consistent formatting |
-| `@IWF/standard:risky` | Risky rules that may change code behavior (use with caution) |
+| Rule Set                 | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| `@IWFWeb/standard`       | Non-risky coding style rules for consistent formatting       |
+| `@IWFWeb/standard:risky` | Risky rules that may change code behavior (use with caution) |
 
-Both rule sets build upon the excellent `@PhpCsFixer` rule set (which includes `@Symfony` and `@PSR12`) with customizations tailored for IWF projects.
+Both rule sets build upon the excellent `@PhpCsFixer` rule set (which includes `@Symfony` and `@PSR12`) with customizations tailored for IWF Web projects.
 
 ## Getting Started
 
@@ -40,16 +40,16 @@ Create a `.php-cs-fixer.dist.php` file in your project root:
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use IWF\CodingStandard\IWFRiskySet;
-use IWF\CodingStandard\IWFSet;
+use IWFWeb\CodingStandard\IWFWebStandardRiskySet;
+use IWFWeb\CodingStandard\IWFWebStandardSet;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 return new Config()
     ->registerCustomRuleSets([
-        new IWFSet(),
-        new IWFRiskySet(),
+        new IWFWebStandardSet(),
+        new IWFWebStandardRiskySet(),
     ])
     ->setFinder(Finder::create()
         ->in(__DIR__)
@@ -57,8 +57,8 @@ return new Config()
     ->setParallelConfig(ParallelConfigFactory::detect())
     ->setRiskyAllowed(true)
     ->setRules([
-        '@IWF/standard' => true,
-        '@IWF/standard:risky' => true,
+        '@IWFWeb/standard' => true,
+        '@IWFWeb/standard:risky' => true,
     ])
 ;
 ```
@@ -75,7 +75,7 @@ vendor/bin/php-cs-fixer fix
 
 ## Rule Customizations
 
-### @IWF/standard
+### @IWFWeb/standard
 
 Key customizations over the base `@PhpCsFixer` rule set:
 
@@ -86,7 +86,7 @@ Key customizations over the base `@PhpCsFixer` rule set:
 - **Trailing commas everywhere** - In arrays, arguments, parameters, and match expressions
 - **PHPUnit flexibility** - Does not require `@covers` annotations on test classes
 
-### @IWF/standard:risky
+### @IWFWeb/standard:risky
 
 Key customizations over the base `@PhpCsFixer:risky` rule set:
 
@@ -95,9 +95,37 @@ Key customizations over the base `@PhpCsFixer:risky` rule set:
 - **Flexible data providers** - Does not enforce naming conventions for PHPUnit data providers
 - **Ignored comment tags** - Preserves `php-cs-fixer-ignore` and `todo` comments
 
+## Migration from v1.x
+
+In v1.x, the namespace was `IWF\CodingStandard` with classes `IWFSet` and `IWFRiskySet`, and rule sets `@IWF/standard` and `@IWF/standard:risky`. These still work but are **deprecated** and will be removed in v2.0.
+
+To migrate, update your `.php-cs-fixer.dist.php`:
+
+```diff
+-use IWF\CodingStandard\IWFRiskySet;
+-use IWF\CodingStandard\IWFSet;
++use IWFWeb\CodingStandard\IWFWebStandardRiskySet;
++use IWFWeb\CodingStandard\IWFWebStandardSet;
+
+ return new Config()
+     ->registerCustomRuleSets([
+-        new IWFSet(),
+-        new IWFRiskySet(),
++        new IWFWebStandardSet(),
++        new IWFWebStandardRiskySet(),
+     ])
+     ->setRules([
+-        '@IWF/standard' => true,
+-        '@IWF/standard:risky' => true,
++        '@IWFWeb/standard' => true,
++        '@IWFWeb/standard:risky' => true,
+     ])
+ ;
+```
+
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+Please read [CONTRIBUTING.md][contributing] for details on our code of conduct and the process for submitting pull requests.
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated releases and changelog generation.
 
@@ -107,11 +135,21 @@ We use [SemVer](http://semver.org/) for versioning. For available versions, see 
 
 ## Authors
 
-All authors can be found in the [AUTHORS.md](AUTHORS.md) file.
+### Special thanks for all the people who had helped this project so far
 
-Contributors can be found in the [CONTRIBUTORS.md](CONTRIBUTORS.md) file.
+- **Manuele** - [D3strukt0r](https://github.com/D3strukt0r)
 
 See also the full list of [contributors][gh-contributors] who participated in this project.
+
+### I would like to join this list. How can I help the project?
+
+We're currently looking for contributions for the following:
+
+- [ ] Bug fixes
+- [ ] Translations
+- [ ] etc...
+
+For more information, please refer to our [CONTRIBUTING.md][contributing] guide.
 
 ## License
 
@@ -119,9 +157,10 @@ This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.t
 
 ## Acknowledgments
 
-A list of used libraries and code with their licenses can be found in the [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md) file.
+This project currently uses no third-party libraries or copied code.
 
 [license]: https://github.com/iwf-web/php-coding-standard/blob/main/LICENSE.txt
 [packagist]: https://packagist.org/packages/iwf-web/php-coding-standard
 [gh-tags]: https://github.com/iwf-web/php-coding-standard/tags
 [gh-contributors]: https://github.com/iwf-web/php-coding-standard/contributors
+[contributing]: https://github.com/iwf-web/.github/blob/main/CONTRIBUTING.md

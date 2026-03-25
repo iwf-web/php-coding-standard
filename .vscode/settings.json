@@ -1,5 +1,5 @@
 {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "[php]": {
         "editor.tabSize": 4,
         "editor.defaultFormatter": "junstyle.php-cs-fixer"
