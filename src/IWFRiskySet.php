@@ -12,54 +12,33 @@
 
 namespace IWF\CodingStandard;
 
-use PhpCsFixer\RuleSet\AbstractRuleSetDefinition;
+use IWFWeb\CodingStandard\IWFWebStandardRiskySet;
 
 /**
- * IWF Coding Standard - Risky rules.
+ * @deprecated Use {@see IWFWebStandardRiskySet} instead. Will be removed in v2.0.
  *
- * This ruleset contains risky rules that may change code behavior.
- * These are rules that require careful review as they can affect runtime behavior.
- *
- * Usage: '@IWF/standard:risky' => true
+ * TODO: Remove in v2.0
  */
-final class IWFRiskySet extends AbstractRuleSetDefinition
+class IWFRiskySet extends IWFWebStandardRiskySet
 {
-    public function getName(): string
+    public function __construct()
     {
-        // @IWF:risky -> @IWF/standard:risky
-        return implode(':', array_filter([($parts = explode(':', parent::getName()))[0].'/standard', $parts[1] ?? null]));
-    }
+        parent::__construct();
 
-    public function getRules(): array
-    {
-        return [
-            // Base risky rulesets
-            '@auto:risky' => true, // Automatically chooses PHP & PHPUnit risky rulesets based on composer.json
-            '@PhpCsFixer:risky' => true, // includes @Symfony:risky, @PSR12:risky, and more
-
-            // Fix PhpUnit wrong access (mock expecations are not static calls)
-            'php_unit_test_case_static_method_calls' => [
-                'call_type' => 'self',
-                'methods' => [
-                    'never' => 'this',
-                    'once' => 'this',
-                    'exactly' => 'this',
-                ],
-            ],
-
-            // Disable strict types, we use PhpStan for that
-            'declare_strict_types' => false,
-
-            // We might want to use a provider for multiple files, so don't force a match
-            'php_unit_data_provider_name' => false,
-
-            // Ignore some tags when converting comments to PHPDoc
-            'comment_to_phpdoc' => ['ignored_tags' => ['php-cs-fixer-ignore', 'todo']],
-        ];
+        @trigger_error(\sprintf(
+            'Class "%s" is deprecated, use "%s" instead. It will be removed in v2.0.',
+            self::class,
+            IWFWebStandardRiskySet::class,
+        ), E_USER_DEPRECATED);
     }
 
     public function getDescription(): string
     {
-        return 'IWF Coding Standard - Risky rules that may change code behavior.';
+        return 'Deprecated: Use @IWFWeb/standard:risky instead. '.parent::getDescription();
+    }
+
+    public function getName(): string
+    {
+        return '@IWF/standard:risky';
     }
 }
