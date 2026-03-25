@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/iwf-web/php-coding-standard/compare/1.0.3...1.1.0) (2026-03-25)
+
+
+### ✨ Features
+
+* rename rule sets and namespaces to IWFWeb ([b721d25](https://github.com/iwf-web/php-coding-standard/commit/b721d257f11405110ac4776fc37f7426abf5420d))
+
+
+### 📚 Documentation
+
+* Simplify after moving community files to org repo .github ([d9972d4](https://github.com/iwf-web/php-coding-standard/commit/d9972d44b538da049cad3cf31147ece8051a738c))
+
 ## [1.0.3](https://github.com/iwf-web/php-coding-standard/compare/1.0.2...1.0.3) (2026-03-06)
 
 
