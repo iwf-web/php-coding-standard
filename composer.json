@@ -41,21 +41,5 @@
     "minimum-stability": "stable",
     "config": {
         "sort-packages": true
-    },
-    "archive": {
-        "exclude": [
-            ".devcontainer",
-            ".github",
-            ".vscode",
-            ".editorconfig",
-            ".gitignore",
-            ".gitattributes",
-            "CODEOWNERS",
-            "*.md",
-            "*.dist.php",
-            "*release*.json",
-            "!README.md",
-            "!CHANGELOG.md"
-        ]
     }
 }
