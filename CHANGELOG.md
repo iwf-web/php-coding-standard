@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1](https://github.com/iwf-web/php-coding-standard/compare/1.1.0...1.1.1) (2026-06-25)
+
+
+### 🐛 Bug Fixes
+
+* **ci:** group dependabot updates and harden release workflow ([90a852c](https://github.com/iwf-web/php-coding-standard/commit/90a852cc66f6d0e252f2b593fa5bd79f215eb325))
+
 ## [1.1.0](https://github.com/iwf-web/php-coding-standard/compare/1.0.3...1.1.0) (2026-03-25)
 
 
