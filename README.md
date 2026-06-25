@@ -23,7 +23,7 @@ Both rule sets build upon the excellent `@PhpCsFixer` rule set (which includes `
 ### Prerequisites
 
 - PHP 8.2 or higher
-- [PHP-CS-Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) ^3.0
+- [PHP-CS-Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) ^3.88 — the `Config::registerCustomRuleSets()` method used below was added in 3.88; earlier versions cannot load these rule sets
 
 ### Installation
 

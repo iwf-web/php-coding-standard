@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to coding agents (Claude Code, etc.) when working with code in this repository. `CLAUDE.md` simply imports this file via `@AGENTS.md`.
 
 ## Project Overview
 
@@ -28,15 +28,15 @@ No test suite exists - this is a configuration library.
 
 ## Architecture
 
-The package contains two source files in `src/`:
+`src/` is autoloaded under two PSR-4 namespaces: `IWFWeb\CodingStandard\` (current) and `IWF\CodingStandard\` (deprecated, hosts only the legacy wrappers). The five source files:
 
 - **IWFWebStandardSet.php** - Extends `AbstractRuleSetDefinition`, returns `@IWFWeb/standard`. Builds on `@PhpCsFixer` with customizations: no Yoda style, strict types at file top (no blank line), trailing commas everywhere, preserved single-line DocBlocks.
 
 - **IWFWebStandardRiskySet.php** - Extends `AbstractRuleSetDefinition`, returns `@IWFWeb/standard:risky`. Builds on `@PhpCsFixer:risky` with customizations: PHPUnit uses `self::` instead of `$this->`, flexible data provider naming.
 
-- **IWFSet.php** - Deprecated wrapper for `IWFWebStandardSet`. Will be removed in v2.0.
+- **RuleSetNameResolver.php** - `@internal` helper. PHP-CS-Fixer's `AbstractRuleSetDefinition::getName()` derives the name from the class name (e.g. `@IWFWebStandard`), which can't contain a `/`. Both set definitions call `RuleSetNameResolver::resolve()` to rewrite that into the slash-separated public name (`@IWFWeb/standard`), preserving any `:risky` suffix.
 
-- **IWFRiskySet.php** - Deprecated wrapper for `IWFWebStandardRiskySet`. Will be removed in v2.0.
+- **IWFSet.php** / **IWFRiskySet.php** - Deprecated wrappers (in the `IWF\CodingStandard\` namespace) for the `IWFWeb*` sets. Will be removed in v2.0.
 
 ## Usage in Other Projects
 
